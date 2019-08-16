@@ -21,7 +21,7 @@ public class Assessment {
 		// System.out.println(getBert.getBert("bertadambert")); //done
 		
 		Assessment superBlock = new Assessment();
-		System.out.println(superBlock.superBlock("aaaaaaabbbddddc"));
+		//System.out.println(superBlock.superBlock("aaaaaaabbbddddc"));
 
 	}
 	// Given a string, return a string where
