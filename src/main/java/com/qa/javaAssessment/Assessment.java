@@ -5,19 +5,23 @@ public class Assessment {
 	public static void main(String[] args) {
 
 		Assessment evenlySpaced = new Assessment();
-		System.out.println(evenlySpaced.evenlySpaced(4, 3, 5));
+		// System.out.println(evenlySpaced.evenlySpaced(4, 3, 5)); //done
 
 		Assessment amISearch = new Assessment();
-		System.out.println(amISearch.amISearch(" am aam am ami am a"));
+		// System.out.println(amISearch.amISearch(" am aam am ami am a")); //done but
+		// slightly cheaty
 
 		Assessment fizzBuzz = new Assessment();
-		System.out.println(fizzBuzz.fizzBuzz(3));
+		// System.out.println(fizzBuzz.fizzBuzz(3)); //done
 
 		Assessment nMid = new Assessment();
-		System.out.println(nMid.nMid("booperkk", 2));
+		// System.out.println(nMid.nMid("unliked", 3)); // done
 
 		Assessment getBert = new Assessment();
-		System.out.println(getBert.getBert("bert adam bert"));
+		// System.out.println(getBert.getBert("bertadambert")); //done
+		
+		Assessment superBlock = new Assessment();
+		System.out.println(superBlock.superBlock("aaaaaaabbbddddc"));
 
 	}
 	// Given a string, return a string where
@@ -53,11 +57,14 @@ public class Assessment {
 
 		String newWord = "";
 
-		for (int i = 0; i < input.length() - 4; i++) {
+		for (int i = 0; i < input.length() - 3; i++) {
 			if (input.substring(i, i + 4).equals("bert")) {
-				for (int n = i + 5; n < input.length() - 4; n++) {
+
+				for (int n = i + 4; n < input.length() - 3; n++) {
+
 					if (input.substring(n, n + 4).equals("bert")) {
-						newWord = input.substring(i + 4, n + 4);
+						newWord = input.substring(i + 4, n);
+
 					}
 
 				}
@@ -104,20 +111,35 @@ public class Assessment {
 	// nMid("Chocolate", 1) ==> "Choclate"
 
 	public String nMid(String input, int a) {
-		int n = input.length();
-		int b = n / 2;
+		int stringLength = input.length();
+		int middle = stringLength / 2;
 		String newWord = "";
 
-		for (int i = 0; i < input.length(); i++) {
-			if (i > (b - a / 2) || i < (b - a / 2)) {
-				newWord += input.substring(i, i + 1);
-			} else {
-				newWord += input.substring(b - a / 2, b + a / 2) == "";
+		for (int i = 0; i < input.length(); i++) { 
+
+			if (a % 2 != 0) {
+				if (i < (middle - a / 2) || i > (middle + a / 2)) {
+					newWord += input.substring(i, i + 1);
+
+				} else {
+					newWord += "";
+
+				}
 
 			}
 
-		}
+			else {
+				System.out.println(newWord);
+				if (i < (middle - a / 2) || i > (middle + (a / 2) - 1)) {
+					newWord += input.substring(i, i + 1);
+					System.out.println(newWord);
+				} else {
+					newWord += "";
 
+				}
+
+			}
+		}
 		return newWord;
 	}
 
@@ -129,15 +151,21 @@ public class Assessment {
 	// superBlock("") ==> 0
 
 	public int superBlock(String input) {
+		
 		int i = 0;
-		for (int n = 1; n < input.length(); n++) {
-			if (input.substring(i, n).equals(input.substring(i + 1, n))) {
-				return n;
-			} else {
+		int counter = 0;
+		
+		for (i = 0; i <input.length(); i++)	{
+			for (int n = 0; n < input.length()-2; n++) {
+				if (input.substring(i, n+1).equals(input.substring(n , n+1))) {
+					
+					System.out.println(input.substring(n,n+1));
+					counter++;
+					}
 			}
-			i++;
-			return -1;
+			
 		}
+		return counter;
 	}
 
 	// given a string - return the number of times "am" appears in the String
@@ -206,14 +234,13 @@ public class Assessment {
 	// largest("555 72 86 45 10") ==> 15
 
 	public int largest(String arg1) {
-		
-		
-		
-		for (int i = 0; i < arg1.length(); i++) {
-			int first = arg1.substring(i);
-			
-			valueOf(arg1.substring())
-		}
-		return -1;
+
+		// for (int i = 0; i < arg1.length(); i++) {
+		// int first = arg1.substring(i);
+
+		// valueOf(arg1.substring())
+		// }
+		// return -1;
+		return 1;// }
 	}
 }
